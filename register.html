@@ -1,0 +1,195 @@
+<h1>Inserimento prodotto</h1>
+
+<form method="post">
+  <label>Nome:</label>
+  <input type="text" name="nome" required>
+
+  <label>Prezzo:</label>
+  <input type="float" name="prezzo" required>
+
+  <label>Categoria:</label>
+  <select name="categoria">
+    <option value="Tech">Tech</option>
+    <option value="Abbigliamento">Abbigliamento</option>
+    <option value="Casa">Casa</option>
+  </select>
+
+  <label>Disponibile:</label>
+  <input type="checkbox" name="disponibilesi">
+
+  <button type="submit">Invia</button>
+</form>
+
+<style>
+
+/* -------------------------
+   GLOBAL + TYPO
+--------------------------*/
+
+body {
+    margin: 0;
+    padding: 50px;
+    font-family: "Inter", "SF Pro Display", sans-serif;
+    background: radial-gradient(circle at top left, #e7ecf7, #f7f9fc 60%);
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* -------------------------
+   PAGE TITLE — Liquid Glass + Apple
+--------------------------*/
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: -0.03em;
+    color: #111827;
+    text-shadow: 0 4px 20px rgba(255,255,255,0.6);
+    transition: 0.3s ease;
+}
+
+h1:hover {
+    transform: translateY(-3px) scale(1.02);
+    text-shadow: 0 6px 25px rgba(255,255,255,0.8);
+}
+
+/* -------------------------
+   FORM WRAPPER — Liquid + Motion
+--------------------------*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 360px;
+    padding: 30px;
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.4);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.08),
+        inset 0 0 35px rgba(255,255,255,0.15);
+
+    transition: 0.3s cubic-bezier(.23,1,.32,1);
+}
+
+form:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.12),
+        inset 0 0 50px rgba(255,255,255,0.2);
+}
+
+/* -------------------------
+   LABELS
+--------------------------*/
+
+label {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: -5px;
+    transition: 0.25s ease;
+}
+
+label:hover {
+    color: #4f8cff;
+}
+
+/* -------------------------
+   INPUTS — Liquid + Apple
+--------------------------*/
+
+input[type="text"],
+input[type="float"],
+select {
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #cbd5e1;
+    background: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    transition: 0.3s ease;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+input[type="text"]:focus,
+input[type="float"]:focus,
+select:focus {
+    outline: none;
+    border-color: #4f8cff;
+    box-shadow: 0 0 0 5px rgba(79,140,255,0.25);
+    transform: scale(1.02);
+}
+
+/* -------------------------
+   CHECKBOX — Motion
+--------------------------*/
+
+input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    accent-color: #4f8cff;
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+input[type="checkbox"]:hover {
+    transform: scale(1.3) rotate(-10deg);
+}
+
+/* -------------------------
+   BUTTON — Liquid + Neon Motion
+--------------------------*/
+
+button {
+    margin-top: 10px;
+    padding: 14px 24px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+
+    background: linear-gradient(135deg, #4b7bff, #2e5cff);
+    box-shadow:
+        0 6px 20px rgba(46,92,255,0.35),
+        0 0 12px rgba(46,92,255,0.25) inset;
+    transition: 0.3s cubic-bezier(.23,1,.32,1);
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 10px 28px rgba(46,92,255,0.45),
+        0 0 18px rgba(46,92,255,0.35) inset,
+        0 0 15px rgba(79,140,255,0.5);
+}
+
+button:active {
+    transform: scale(0.95) translateY(1px);
+}
+
+/* -------------------------
+   MESSAGGI
+--------------------------*/
+
+.error {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.success {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+</style>
