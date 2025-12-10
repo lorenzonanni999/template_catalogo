@@ -1,0 +1,28 @@
+<h1>Inserimento prodotto</h1>
+
+<form method="post">
+  <label>Nome:</label>
+  <input type="text" name="nome" required>
+
+  <label>Prezzo:</label>
+  <input type="float" name="prezzo" required>
+
+  <label>Categoria:</label>
+  <select name="categoria">
+    <option value="Tech">Tech</option>
+    <option value="Abbigliamento">Abbigliamento</option>
+    <option value="Casa">Casa</option>
+  </select>
+
+  <label>Disponibile:</label>
+  <input type="checkbox" name="disponibilesi">
+
+
+  <button type="submit">Invia</button>
+</form>
+
+<style>
+  form { display:flex; flex-direction:column; width:200px; gap:8px; }
+  .error { color:red; }
+  .success { color:green; }
+</style>

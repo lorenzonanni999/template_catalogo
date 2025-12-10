@@ -1,0 +1,46 @@
+<h1>CATALOGO PRODOTTI</h1>
+
+{% if products %}
+
+<label>Filtra per categoria:</label>
+<form method="post" action="/catalogo/filtra">
+<select name="categoria">
+    <option value="Tech">Tech</option>
+    <option value="Abbigliamento">Abbigliamento</option>
+    <option value="Casa">Casa</option>
+</select>
+<button type="submit">Filtra</button>
+</form>
+
+<h1></h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Prezzo (€)</th>
+    <th>Categoria</th>
+    <th>Disponibile</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  {% for p in products %}
+    <tr>
+      <td>{{ p["name"] }}</td>
+      <td>{{ p["price"] }}</td>
+      <td>{{ p["category"] }}</td>
+      <td>{{ p["available"] }}</td>
+      <td><form method="post" action="/catalogo/modifica/{{p['_id']}}"><button type="submit">Modifica disponibilità</button></form></td>
+      <td><form method="post" action="/catalogo/elimina/{{p['_id']}}"><button type="submit">Elimina prodotto</button></form></td>
+    </tr>
+  {% end %}
+</table>
+{% else %}
+  <p>Nessun prodotto disponibile.</p>
+{% end %}
+
+<style>
+  table { border-collapse:collapse; }
+  th, td { border:1px solid #ccc; padding:8px; }
+  .expensive { background:#ffeeee; }
+</style>
